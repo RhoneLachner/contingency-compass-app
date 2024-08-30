@@ -1,0 +1,14 @@
+/* src/components/AlertList/alertList.css */
+
+.alert-list {
+    padding: 20px;
+    background-color: #f8d7da;
+    color: #721c24;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.alert-item {
+    margin: 10px 0;
+    font-size: 1.1em;
+}

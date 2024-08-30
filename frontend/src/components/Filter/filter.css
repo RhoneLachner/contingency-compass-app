@@ -1,0 +1,15 @@
+/* src/components/Filter/filter.css */
+
+.filter-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    border-radius: 5px;
+}
+
+.filter-section select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

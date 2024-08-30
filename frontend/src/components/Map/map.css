@@ -1,0 +1,14 @@
+/* src/components/map.css */
+
+.map-section {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.map-container {
+    height: 400px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}

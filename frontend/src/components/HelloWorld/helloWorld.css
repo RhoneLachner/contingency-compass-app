@@ -1,0 +1,13 @@
+/* src/components/HelloWorld/helloWorld.css */
+
+.helloWorldContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; 
+}
+
+.helloWorldText {
+    font-size: 2rem; 
+    text-align: center; 
+}
