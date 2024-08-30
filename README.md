@@ -44,6 +44,10 @@ The Contingency Compass App aims to serve as a comprehensive disaster preparedne
 
 The scope of the app includes providing localized alerts, safety tips, and access to nearby resources. By focusing on real-time information and practical advice, Contingency Compass helps users make informed decisions and take appropriate actions during emergencies.
 
+## Future Scaling
+
+I plan to expand this web application into a progressive web app, and later into a separate mobile app using React Native, relying on the current backend. 
+
 ## Technologies Used
 
 - **Frontend**: React, HTML, CSS, JavaScript
