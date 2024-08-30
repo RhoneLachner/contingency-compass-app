@@ -1,3 +1,5 @@
+<img src="./frontend/public/disaster-compass-icon.png" alt="Contingency Compass Icon" width="100" />
+
 # Contingency Compass App
 
 Contingency Compass is a web application designed to provide critical information and resources during natural disasters. By offering real-time alerts, safety tips, and access to essential services, the app helps users stay prepared and informed in times of crisis. Whether facing an earthquake, wildfire, flood, or other natural calamities, Contingency Compass ensures users have the information they need to navigate safely.
