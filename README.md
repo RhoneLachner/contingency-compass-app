@@ -1,4 +1,4 @@
-<img src="./frontend/public/disaster-compass-icon.png" alt="Contingency Compass Icon" width="100" />
+<img src="./frontend/public/disaster-compass-icon.png" alt="Contingency Compass Icon" width="120" />
 
 # Contingency Compass App
 
