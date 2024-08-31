@@ -1,0 +1,50 @@
+/* src/GlobalComponents/LocationSearch/locationSearch.css */
+
+.locationSearch {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 10px;
+    margin: 2rem auto 0rem auto;
+    background-color: #6c757d;
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.locationSearch input {
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    height: 15px;
+}
+
+.locationSearch select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.locationSearch button {
+    padding: 9px 12px;
+    border: none;
+    background-color: #2880dd;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.locationSearch button:hover {
+    background-color: #0056b3;
+}
+
+.locationSearch .input-error {
+    border-color: red;
+}
+
+.locationSearch .error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-left: 10px;
+}

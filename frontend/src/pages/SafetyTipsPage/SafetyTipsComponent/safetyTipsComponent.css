@@ -1,0 +1,14 @@
+/* src/components/SafetyTipsComponent/safetyTipsComponent.css */
+
+.safetyTipsComponent {
+    padding: 20px;
+    background-color: #e9f7ef;
+    color: #155724;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.safetyTipItem {
+    margin: 10px 0;
+    font-size: 1.1em;
+}

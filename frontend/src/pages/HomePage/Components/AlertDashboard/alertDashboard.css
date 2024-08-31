@@ -1,0 +1,45 @@
+/* src/pages/HomePage/Components/AlertDashboard/alertDashboard.css */
+
+.alertDashboard {
+    padding: 20px;
+    margin: 1.5rem;
+    background-color: #f8d073; /* Light background to separate from main content */
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.alertDashboard h2 {
+    margin-bottom: 10px;
+}
+
+.alertDashboard p {
+    font-style: italic;
+    color: #5b5b5b;
+    margin-bottom: 20px;
+}
+
+.alertDashboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.alertDashboard li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px; /* Adjusting font size for better readability */
+}
+
+.alertDashboard li strong {
+    font-weight: bold;
+    color: #1f1f1f; /* Darker color for disaster type */
+}
+
+.alertDashboard li em {
+    font-style: italic;
+    color: #000000; /* Slightly different color for location */
+}
+
+.alertDashboard li:last-child {
+    border-bottom: none;
+}

@@ -2,6 +2,8 @@
 
 .App {
   text-align: center;
+  background-color: rgb(164, 181, 136);
+  margin: 0rem;
 }
 
 .nav-links {

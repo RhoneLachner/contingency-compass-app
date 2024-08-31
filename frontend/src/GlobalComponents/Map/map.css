@@ -1,0 +1,15 @@
+/* src/GlobalComponents/Map/map.css */
+
+.mapContainer {
+    height: 25rem;
+    max-height: 35rem;
+    max-width: 50rem;
+    width: 40rem;
+    background-color: #e0e0e0;
+    margin: 15px auto; /* Center the map container horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #adadad; /* Optional: adds a border for better visibility */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
