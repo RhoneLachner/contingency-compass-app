@@ -10,8 +10,8 @@ const App = () => {
         <div className="appContainer">
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/loading" element={<ResourcesPage />} />
-                <Route path="/music" element={<SafetyTipsPage />} />
+                <Route path="/ResourcesPage" element={<ResourcesPage />} />
+                <Route path="/SafetyTipsPage" element={<SafetyTipsPage />} />
             </Routes>
         </div>
     );
