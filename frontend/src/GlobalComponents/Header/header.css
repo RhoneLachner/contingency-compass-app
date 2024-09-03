@@ -1,21 +1,56 @@
-/* src/components/Header/header.css */
-
 /* src/GlobalComponents/Header/header.css */
 .appHeader {
-    background-color: #ffffff;
-    color: white;
-    padding-top: 1.5rem;
-    text-align: center;
-    font-size: 1.5em;
+    background-color: rgb(36, 36, 36);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distributes space between items */
+    position: relative; /* Positioning context for absolute elements */
 }
 
-.headerTitle {
-    color: black;
-    font-size: 2rem;
-    padding: 0rem 0rem 1rem 0rem;
-    margin: 0;
+.headerIconContainer {
+    flex: 1;
+    text-align: center; /* Center the logo within this container */
 }
 
 .appLogo {
-    width: 5.5rem;
+    width:5rem;
+}
+
+.hamburgerMenu {
+    position: absolute;
+    right: 2rem;
+    top: 25%; /* Adjust this value to move the icon closer to the top */
+    cursor: pointer;
+}
+
+.hamburgerIcon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.dropdownMenu {
+    position: absolute;
+    right: 1rem;
+    top: 3rem;
+    background-color: rgb(36, 36, 36);
+    border: .75px solid #939393;
+    border-radius: 0px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: right;
+}
+
+.dropdownItem {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+.dropdownItem:hover {
+    background-color: #555;
 }
