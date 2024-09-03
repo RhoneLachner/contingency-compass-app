@@ -1,6 +1,9 @@
 /* src/pages/HomePage/homePage.css */
 .homePage {
     text-align: center;
-    background-color: #37383a;
+    width: 100%;
+    background-image: url('../../../public/images/HomeBackgroundImage.webp'); 
+    background-position: center; 
+    background-attachment: fixed; 
 }
 

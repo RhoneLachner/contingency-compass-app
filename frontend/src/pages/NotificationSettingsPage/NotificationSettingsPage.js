@@ -1,5 +1,5 @@
 import React from "react";
-import  Header  from "../../GlobalComponents/Header/Header.js"
+import  Header  from "../../globalComponents/Header/Header.js"
 import "./notificationSettingsPage.css"
 
 const NotificationSettingsPage = () => {

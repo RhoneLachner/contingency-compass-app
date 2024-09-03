@@ -2,7 +2,7 @@
 
 import React from 'react';
 import  SafetyTipsComponent  from './SafetyTipsComponent/SafetyTipsComponent.js'; // Adjust the path if necessary
-import  Header  from "../../GlobalComponents/Header/Header.js"
+import  Header  from "../../globalComponents/Header/Header.js"
 import './safetyTipsPage.css'; // Optional: Create this CSS file for styling
 
 const SafetyTipsPage = () => {

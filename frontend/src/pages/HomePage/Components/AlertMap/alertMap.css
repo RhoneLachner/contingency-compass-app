@@ -12,4 +12,5 @@
     justify-content: center;
     border: 1px solid #adadad; /* Optional: adds a border for better visibility */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+    font-family: "Exo 2", sans-serif;
 }

@@ -1,13 +1,13 @@
 // src/pages/HomePage/HomePage.js
 
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import Header from "../../GlobalComponents/Header/Header";
-import Footer from "../../GlobalComponents/Footer/Footer";
+import Header from "../../globalComponents/Header/Header";
+import Footer from "../../globalComponents/Footer/Footer";
 import AlertMap from "./Components/AlertMap/AlertMap";
-import LocationSearch from "../../GlobalComponents/LocationSearch/LocationSearch";
+import LocationSearch from "../../globalComponents/LocationSearch/LocationSearch";
 import AlertDashboard from "./Components/AlertDashboard/AlertDashboard";
-import NavigationButtons from "./Components/NavigationButtons/NavigationButtons";
 import DisasterTypeButtons from "./Components/DisasterTypeButtons/DisasterTypeButtons";
+import WelcomeSplash from "./Components/WelcomeSplash/WelcomeSplash";
 import "./homePage.css";
 
 const HomePage = () => {
@@ -83,7 +83,7 @@ const HomePage = () => {
     return (
         <div className="homePage">
             <Header />
-            <NavigationButtons />
+            <WelcomeSplash/>
             <LocationSearch
                 onLocationChange={handleLocationChange}
                 showAllButton={selectedLocation !== "all"}

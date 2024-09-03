@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ResourceLocatorComponent from './ResourceLocatorComponent/ResourceLocatorComponent.js'; 
-import  Header  from "../../GlobalComponents/Header/Header.js"
+import  Header  from "../../globalComponents/Header/Header.js"
 import './resourcesPage.css';
 const ResourcesPage = () => {
     return (
