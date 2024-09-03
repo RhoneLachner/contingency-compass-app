@@ -5,38 +5,45 @@
     align-items: center;
     justify-content: center; 
     gap: 10px;
-    margin: 2rem auto 0rem auto;
-    background-color: #6c757d;
-    padding: 10px;
-    border-radius: 5px;
+    margin: 3rem auto 2rem auto;
+    background-color: #000000aa;
+    padding: 1rem;
     width: fit-content;
 }
 
 .locationSearch input {
-    padding: 9px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 200px;
+    padding: 10px 12px;
+    border: 1px solid #ffffff;
+    background-color: rgba(124, 124, 124, 0.286);
+    width: 25vw;
     height: 15px;
+    color: white;
+    font-size: .9rem;
 }
 
 .locationSearch select {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 8px;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #ffffffbe;
+    color: white;
+    font-size: .9rem;
 }
 
 .locationSearch button {
-    padding: 9px 12px;
+    padding: 10px 15px;
     border: none;
-    background-color: #2880dd;
-    color: white;
-    border-radius: 5px;
+    background-color: rgb(209, 136, 0);
+    color: black;
+    border-style: solid;
+    font-weight: 500;
     cursor: pointer;
+    font-size: .9rem;
 }
 
 .locationSearch button:hover {
-    background-color: #0056b3;
+    background-color: orange;
+    color: black;
+    font-weight: 500;
 }
 
 .locationSearch .input-error {

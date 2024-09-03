@@ -3,7 +3,7 @@
     text-align: center;
     width: 100%;
     background-image: url('../../../public/images/HomeBackgroundImage.webp'); 
-    background-position: center; 
+    background-position: top; 
     background-attachment: fixed; 
 }
 

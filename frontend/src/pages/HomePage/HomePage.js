@@ -59,10 +59,11 @@ const HomePage = () => {
         <div className="homePage">
             <Header />
             <WelcomeSplash />
-            <LocationSearch
-                onLocationChange={handleLocationChange}
-                showAllButton={selectedLocation !== "all"}
-            />
+            <div id="locationSearchID"/>  
+                <LocationSearch 
+                    onLocationChange={handleLocationChange}
+                    showAllButton={selectedLocation !== "all"}
+                />
             <AlertMap
                 selectedLocation={selectedLocation}
                 proximity={proximity}

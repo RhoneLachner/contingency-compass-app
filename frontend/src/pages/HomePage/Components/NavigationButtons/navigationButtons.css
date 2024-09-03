@@ -1,8 +1,8 @@
 .navigationButtonsContainer {
     display: flex;                
     justify-content: center;      
-    padding-bottom: 0.75rem;
-    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
     width: 100%;                 
 }
 
@@ -20,6 +20,6 @@
 }
 
 .navButton:hover {
-font-weight: 550;
-color: orange;
+    font-weight: 550;
+    color: orange;
 }

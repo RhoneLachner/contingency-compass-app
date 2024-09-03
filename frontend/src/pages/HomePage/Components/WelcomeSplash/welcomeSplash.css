@@ -9,7 +9,7 @@
 }
 
 .splashBody {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)); 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)); 
     width: 100%;
     height: 100%; 
     position: relative; 
@@ -18,8 +18,9 @@
 
 .splashTitle {
     font-family: "Orbitron", system-ui;
-    padding-top: 25vh;
+    margin-top: 25vh;
     font-size:3.5rem;
+    font-weight: 500;
     color: white;
     opacity: 1; 
     z-index: 2; 
@@ -46,3 +47,20 @@
     z-index: 0; 
     pointer-events: none; 
 }
+
+.scrollButton {
+    margin-top: 12vh;
+    padding: 15px 30px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .scrollButton:hover {
+    background-color: orange;
+    color: #000000;
+    font-weight: 500;
+  }
+  

@@ -9,18 +9,22 @@
 .disasterTypeButtons button {
     margin: 8px 8px;
     padding: 10px 20px;
-    background-color: #6c757d;
+    background-color: #000000;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     font-family: "Exo 2", sans-serif;
+    font-size: 1rem;
 }
 
 .disasterTypeButtons button.active {
-    background-color: #2880dd;
+    background-color: rgb(209, 136, 0);
+    color: black;
+    font-weight: 500;
 }
 
 .disasterTypeButtons button:hover {
-    background-color: #0056b3;
+    background-color: orange;
+    color: black;
+    font-weight: 500;
 }

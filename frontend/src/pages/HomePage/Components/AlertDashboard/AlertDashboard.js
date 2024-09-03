@@ -8,7 +8,7 @@ const AlertDashboard = ({ disasters, selectedLocation, proximity }) => {
     
     return (
         <div className="alertDashboard">
-            <h2>Real-Time Disaster Notification Dashboard</h2>
+            <h2>Real-Time Disaster Alerts</h2>
             <p>{locationText}</p>
             <ul>
                 {disasters.map((disaster) => (

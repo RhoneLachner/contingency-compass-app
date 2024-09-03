@@ -1,12 +1,12 @@
 /* src/GlobalComponents/alertMap/alertMap.css */
 
 .mapContainer {
-    height: 25rem;
+    height: 30rem;
+    width: 50rem;
     max-height: 35rem;
     max-width: 50rem;
-    width: 40rem;
     background-color: #e0e0e0;
-    margin: 15px auto; /* Center the map container horizontally */
+    margin: 2.5vh auto 1vh auto; /* Center the map container horizontally */
     display: flex;
     align-items: center;
     justify-content: center;
