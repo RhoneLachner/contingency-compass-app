@@ -5,7 +5,7 @@ import "./alertDashboard.css";
 
 const AlertDashboard = ({ disasters, selectedLocation, proximity }) => {
     const locationText = selectedLocation === "all" ? "All Locations" : `${selectedLocation} - within ${proximity} miles`;
-
+    
     return (
         <div className="alertDashboard">
             <h2>Real-Time Disaster Notification Dashboard</h2>

@@ -4,7 +4,7 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../GlobalComponents/Header/Header";
 import Footer from "../../GlobalComponents/Footer/Footer";
-import Map from "../../GlobalComponents/Map/Map";
+import AlertMap from "./Components/AlertMap/AlertMap";
 import LocationSearch from "../../GlobalComponents/LocationSearch/LocationSearch";
 import AlertDashboard from "./Components/AlertDashboard/AlertDashboard";
 import "./homePage.css";
@@ -17,7 +17,7 @@ const HomePage = () => {
 
     const allDisasterTypes = ["Earthquake", "Flood", "Wildfire", "Tornado", "Air Quality", "Chemical Spill", "Nuclear Event"];
 
-    const disasterData = useMemo(() => [
+    const mockDisasterData = useMemo(() => [
         { id: 1, type: "Earthquake", message: "Magnitude 5.2 earthquake detected.", location: "Seattle", state: "WA" },
         { id: 2, type: "Flood", message: "Flood warning issued.", location: "Portland", state: "OR" },
         { id: 3, type: "Wildfire", message: "Wildfire spreading near Los Angeles.", location: "Los Angeles", state: "CA" },
@@ -28,7 +28,7 @@ const HomePage = () => {
     ], []);
 
     const filterDisasters = useCallback((location, types) => {
-        let filteredDisasters = disasterData;
+        let filteredDisasters = mockDisasterData;
 
         if (location !== "all") {
             filteredDisasters = filteredDisasters.filter(disaster => disaster.location === location);
@@ -39,7 +39,7 @@ const HomePage = () => {
         }
 
         setDisasters(filteredDisasters);
-    }, [disasterData]);
+    }, [mockDisasterData]);
 
     useEffect(() => {
         filterDisasters(selectedLocation, selectedDisasterTypes);
@@ -85,8 +85,9 @@ const HomePage = () => {
             <div className="navigationButtonsContainer">
             <div className="navigationButtons">
             {/* NavigationButtons still need proper linking */}
-                <Link to="/ResourcesPage" className="navButton">Nearby Resources</Link>
                 <Link to="/SafetyTipsPage" className="navButton">Safety Tips</Link>
+                <Link to="/ResourcesPage" className="navButton">Nearby Resources</Link>
+                <Link to="/NotificationSettingsPage" className="navButton">Phone Notifications</Link>
             </div>
             </div>
             <LocationSearch
@@ -94,7 +95,7 @@ const HomePage = () => {
                 showAllButton={selectedLocation !== "all"}
             />
             
-            <Map
+            <AlertMap
                 selectedLocation={selectedLocation}
                 proximity={proximity}
                 disasters={disasters}

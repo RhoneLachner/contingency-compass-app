@@ -1,9 +1,9 @@
-// src/GlobalComponents/Map/Map.js
+// src/GlobalComponents/AlertMap/AlertMap.js
 
 import React from "react";
-import "./map.css";
+import "./alertMap.css";
 
-const Map = ({ selectedLocation, proximity, disasters, showAll }) => {
+const AlertMap = ({ selectedLocation, proximity, disasters, showAll }) => {
     return (
         <div className="mapContainer">
             {showAll ? (
@@ -17,4 +17,4 @@ const Map = ({ selectedLocation, proximity, disasters, showAll }) => {
     );
 };
 
-export default Map;
+export default AlertMap;

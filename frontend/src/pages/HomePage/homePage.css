@@ -1,18 +1,17 @@
 /* src/pages/HomePage/homePage.css */
 .homePage {
     text-align: center;
-    background-color: rgb(184, 184, 184);
 }
 
 .navigationButtonsContainer {
     padding-bottom: 1.5rem;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
+    
 }
 
 .navButton {
-    margin: 0px 14px;
+    margin: 0px 2rem;
     padding: 8px 12px;
-    background-color: #2880dd;
     color: white;
     text-decoration: none;
     border-radius: 5px;
