@@ -1,6 +1,6 @@
 // src/pages/HomePage/HomePage.js
 
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React from "react";
 import Header from "../../globalComponents/Header/Header";
 import Footer from "../../globalComponents/Footer/Footer";
 import AlertMap from "./Components/AlertMap/AlertMap";
@@ -8,43 +8,20 @@ import LocationSearch from "../../globalComponents/LocationSearch/LocationSearch
 import AlertDashboard from "./Components/AlertDashboard/AlertDashboard";
 import DisasterTypeButtons from "./Components/DisasterTypeButtons/DisasterTypeButtons";
 import WelcomeSplash from "./Components/WelcomeSplash/WelcomeSplash";
+import useDisasterData from "../../hooks/useDisasterData";
 import "./homePage.css";
 
 const HomePage = () => {
-    const [selectedLocation, setSelectedLocation] = useState("all");
-    const [proximity, setProximity] = useState(10);
-    const [selectedDisasterTypes, setSelectedDisasterTypes] = useState(["all"]);
-    const [disasters, setDisasters] = useState([]);
-
-    const allDisasterTypes = ["Earthquake", "Flood", "Wildfire", "Tornado", "Air Quality", "Chemical Spill", "Nuclear Event"];
-
-    const mockDisasterData = useMemo(() => [
-        { id: 1, type: "Earthquake", message: "Magnitude 5.2 earthquake detected.", location: "Seattle", state: "WA" },
-        { id: 2, type: "Flood", message: "Flood warning issued.", location: "Portland", state: "OR" },
-        { id: 3, type: "Wildfire", message: "Wildfire spreading near Los Angeles.", location: "Los Angeles", state: "CA" },
-        { id: 4, type: "Tornado", message: "Tornado watch issued.", location: "Chicago", state: "IL" },
-        { id: 5, type: "Air Quality", message: "Air quality is unhealthy due to high levels of pollutants.", location: "Denver", state: "CO" },
-        { id: 6, type: "Chemical Spill", message: "Hazardous chemical spill detected near the industrial area.", location: "Houston", state: "TX" },
-        { id: 7, type: "Nuclear Event", message: "Nuclear reactor leak detected, immediate evacuation advised.", location: "San Francisco", state: "CA" },
-    ], []);
-
-    const filterDisasters = useCallback((location, types) => {
-        let filteredDisasters = mockDisasterData;
-
-        if (location !== "all") {
-            filteredDisasters = filteredDisasters.filter(disaster => disaster.location === location);
-        }
-
-        if (!types.includes("all")) {
-            filteredDisasters = filteredDisasters.filter(disaster => types.includes(disaster.type));
-        }
-
-        setDisasters(filteredDisasters);
-    }, [mockDisasterData]);
-
-    useEffect(() => {
-        filterDisasters(selectedLocation, selectedDisasterTypes);
-    }, [selectedLocation, selectedDisasterTypes, filterDisasters]);
+    const {
+        selectedLocation,
+        setSelectedLocation,
+        proximity,
+        setProximity,
+        selectedDisasterTypes,
+        setSelectedDisasterTypes,
+        disasters,
+        allDisasterTypes,
+    } = useDisasterData();
 
     const handleLocationChange = (location, proximity) => {
         setSelectedLocation(location);
@@ -61,9 +38,7 @@ const HomePage = () => {
                 if (prevTypes.includes(type)) {
                     newTypes = prevTypes.filter((t) => t !== type);
                 } else {
-                    newTypes = prevTypes.includes("all")
-                        ? [type]
-                        : [...prevTypes, type];
+                    newTypes = prevTypes.includes("all") ? [type] : [...prevTypes, type];
                 }
 
                 if (newTypes.length === allDisasterTypes.length) {
@@ -83,7 +58,7 @@ const HomePage = () => {
     return (
         <div className="homePage">
             <Header />
-            <WelcomeSplash/>
+            <WelcomeSplash />
             <LocationSearch
                 onLocationChange={handleLocationChange}
                 showAllButton={selectedLocation !== "all"}
@@ -99,10 +74,10 @@ const HomePage = () => {
                 selectedDisasterTypes={selectedDisasterTypes}
                 handleDisasterTypeChange={handleDisasterTypeChange}
             />
-            <AlertDashboard 
-                disasters={disasters} 
-                selectedLocation={selectedLocation} 
-                proximity={proximity} 
+            <AlertDashboard
+                disasters={disasters}
+                selectedLocation={selectedLocation}
+                proximity={proximity}
             />
             <Footer />
         </div>
