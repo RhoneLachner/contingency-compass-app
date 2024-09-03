@@ -1,7 +1,7 @@
 // src/pages/NearbyResourcesPage.NearbyResourcesPage.js
 
 import React from 'react';
-import ResourceLocatorComponent from '../../GlobalComponents/ResourceLocatorComponent/ResourceLocatorComponent.js'; 
+import ResourceLocatorComponent from './ResourceLocatorComponent/ResourceLocatorComponent.js'; 
 import  Header  from "../../GlobalComponents/Header/Header.js"
 import './resourcesPage.css';
 const ResourcesPage = () => {

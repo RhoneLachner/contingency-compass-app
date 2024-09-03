@@ -1,0 +1,19 @@
+
+.navigationButtonsContainer {
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    
+}
+
+.navButton {
+    margin: 0px 2rem;
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.navButton:hover {
+    background-color: #0056b3;
+}

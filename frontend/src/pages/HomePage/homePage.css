@@ -1,52 +1,6 @@
 /* src/pages/HomePage/homePage.css */
 .homePage {
     text-align: center;
-}
-
-.navigationButtonsContainer {
-    padding-bottom: 1.5rem;
-    padding-top: 1rem;
-    
-}
-
-.navButton {
-    margin: 0px 2rem;
-    padding: 8px 12px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.navButton:hover {
-    background-color: #0056b3;
-}
-
-.disasterTypeButtonContainer {
-        margin: 1rem 10rem .5rem 10rem;
-}
-
-.disasterTypeButtons {
-    display: flex; 
-    justify-content: center;
-    flex-wrap: wrap; 
-}
-
-.disasterTypeButtons button {
-    margin: 8px 8px;
-    padding: 10px 20px;
-    background-color: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.disasterTypeButtons button.active {
-    background-color: #2880dd;
-}
-
-.disasterTypeButtons button:hover {
-    background-color: #0056b3;
+    background-color: #37383a;
 }
 

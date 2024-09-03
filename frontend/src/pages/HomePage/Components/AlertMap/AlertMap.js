@@ -3,7 +3,7 @@
 import React from "react";
 import "./alertMap.css";
 
-const AlertMap = ({ selectedLocation, proximity, disasters, showAll }) => {
+const AlertMap = ({ selectedLocation, proximity, showAll }) => {
     return (
         <div className="mapContainer">
             {showAll ? (

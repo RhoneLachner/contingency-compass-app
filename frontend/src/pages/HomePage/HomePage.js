@@ -1,12 +1,13 @@
 // src/pages/HomePage/HomePage.js
 
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import { Link } from "react-router-dom";
 import Header from "../../GlobalComponents/Header/Header";
 import Footer from "../../GlobalComponents/Footer/Footer";
 import AlertMap from "./Components/AlertMap/AlertMap";
 import LocationSearch from "../../GlobalComponents/LocationSearch/LocationSearch";
 import AlertDashboard from "./Components/AlertDashboard/AlertDashboard";
+import NavigationButtons from "./Components/NavigationButtons/NavigationButtons";
+import DisasterTypeButtons from "./Components/DisasterTypeButtons/DisasterTypeButtons";
 import "./homePage.css";
 
 const HomePage = () => {
@@ -82,44 +83,22 @@ const HomePage = () => {
     return (
         <div className="homePage">
             <Header />
-            <div className="navigationButtonsContainer">
-            <div className="navigationButtons">
-            {/* NavigationButtons still need proper linking */}
-                <Link to="/SafetyTipsPage" className="navButton">Safety Tips</Link>
-                <Link to="/ResourcesPage" className="navButton">Nearby Resources</Link>
-                <Link to="/NotificationSettingsPage" className="navButton">Phone Notifications</Link>
-            </div>
-            </div>
+            <NavigationButtons />
             <LocationSearch
                 onLocationChange={handleLocationChange}
                 showAllButton={selectedLocation !== "all"}
             />
-            
             <AlertMap
                 selectedLocation={selectedLocation}
                 proximity={proximity}
                 disasters={disasters}
                 showAll={selectedLocation === "all"}
             />
-            <div className="disasterTypeButtonContainer">
-            <div className="disasterTypeButtons">
-                <button
-                    onClick={() => handleDisasterTypeChange("all")}
-                    className={selectedDisasterTypes.includes("all") ? "active" : ""}
-                >
-                    All Disasters
-                </button>
-                {allDisasterTypes.map(type => (
-                    <button
-                        key={type}
-                        onClick={() => handleDisasterTypeChange(type)}
-                        className={selectedDisasterTypes.includes(type) ? "active" : ""}
-                    >
-                        {type}
-                    </button>
-                ))}
-            </div>
-            </div>
+            <DisasterTypeButtons
+                allDisasterTypes={allDisasterTypes}
+                selectedDisasterTypes={selectedDisasterTypes}
+                handleDisasterTypeChange={handleDisasterTypeChange}
+            />
             <AlertDashboard 
                 disasters={disasters} 
                 selectedLocation={selectedLocation} 
