@@ -3,22 +3,33 @@
 import React from "react";
 import "./alertDashboard.css";
 
-const AlertDashboard = ({ disasters, selectedLocation, proximity }) => {
+const AlertDashboard = ({ disasters, selectedLocation, proximity, error }) => {
     const locationText = selectedLocation === "all" ? "All Locations" : `${selectedLocation} - within ${proximity} miles`;
-    
+
     return (
         <div className="alertDashboard">
             <h2>Real-Time Disaster Alerts</h2>
             <p>{locationText}</p>
-            <ul>
-                {disasters.map((disaster) => (
-                    <li key={disaster.id}>
-                        <strong>{disaster.type}</strong>: {disaster.message} (<em>{disaster.location}, {disaster.state}</em>)
-                    </li>
-                ))}
-            </ul>
+            
+            {error ? (
+                <p className="error">Error: {error}</p>
+            ) : (
+                <ul>
+                    {disasters.map((disaster, index) => {
+                        
+                        const [incidentType, ...rest] = disaster.split(':');
+
+                        return (
+                            <li key={index}>
+                                <strong>{incidentType}:</strong> {rest.join(':')}
+                            </li>
+                        );
+                    })}
+                </ul>
+            )}
         </div>
     );
 };
 
 export default AlertDashboard;
+

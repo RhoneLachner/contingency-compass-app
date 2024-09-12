@@ -8,7 +8,7 @@ const ResourcesPage = () => {
     return (
         <>
         <Header/>
-        <div className="resourcesPage">
+        <div className="resourcesPageContainer">
             <h1>Resources Page</h1>
             <p>Find essential services and resources near your location:</p>
             <ResourceLocatorComponent /> 

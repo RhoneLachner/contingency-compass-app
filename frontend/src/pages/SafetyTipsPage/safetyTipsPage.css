@@ -1,2 +1,5 @@
 /* src/pages/SafetyTipsPage/safetyTipsPage.css
  */
+ .safetyTipsPageContainer {
+    padding-top: 3rem;
+ }

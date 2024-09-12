@@ -9,6 +9,7 @@
     background-color: #000000aa;
     padding: 1rem;
     width: fit-content;
+    border-radius: 3px;
 }
 
 .locationSearch input {
@@ -19,6 +20,7 @@
     height: 15px;
     color: white;
     font-size: .9rem;
+    border-radius: 3px;
 }
 
 .locationSearch select {
@@ -27,6 +29,7 @@
     border: 1px solid #ffffffbe;
     color: white;
     font-size: .9rem;
+    border-radius: 3px;
 }
 
 .locationSearch button {
@@ -38,6 +41,7 @@
     font-weight: 500;
     cursor: pointer;
     font-size: .9rem;
+    border-radius: 3px;
 }
 
 .locationSearch button:hover {

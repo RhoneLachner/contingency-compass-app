@@ -1,42 +1,59 @@
-// src/hooks/useDisasterData.js
+import { useState, useCallback, useEffect } from "react";
 
-import { useState, useMemo, useCallback, useEffect } from "react";
+const DISASTER_API_URL = "/api/open/v2/DisasterDeclarationsSummaries";
+
+const declarationTypeMap = {
+    "EM": "Emergency Declaration",
+    "DR": "Major Disaster Declaration",
+    "SU": "Pre-Declaration Surge",
+};
 
 const useDisasterData = () => {
     const [selectedLocation, setSelectedLocation] = useState("all");
     const [proximity, setProximity] = useState(10);
     const [selectedDisasterTypes, setSelectedDisasterTypes] = useState(["all"]);
     const [disasters, setDisasters] = useState([]);
+    const [error, setError] = useState(null); // Error state
 
-    const allDisasterTypes = ["Earthquake", "Flood", "Wildfire", "Tornado", "Air Quality", "Chemical Spill", "Nuclear Event"];
+    const allDisasterTypes = ["Fire", "Flood", "Earthquake", "Tornado", "Air Quality", "Chemical Spill", "Nuclear Event"];
 
-    const mockDisasterData = useMemo(() => [
-        { id: 1, type: "Earthquake", message: "Magnitude 5.2 earthquake detected.", location: "Seattle", state: "WA" },
-        { id: 2, type: "Flood", message: "Flood warning issued.", location: "Portland", state: "OR" },
-        { id: 3, type: "Wildfire", message: "Wildfire spreading near Los Angeles.", location: "Los Angeles", state: "CA" },
-        { id: 4, type: "Tornado", message: "Tornado watch issued.", location: "Chicago", state: "IL" },
-        { id: 5, type: "Air Quality", message: "Air quality is unhealthy due to high levels of pollutants.", location: "Denver", state: "CO" },
-        { id: 6, type: "Chemical Spill", message: "Hazardous chemical spill detected near the industrial area.", location: "Houston", state: "TX" },
-        { id: 7, type: "Nuclear Event", message: "Nuclear reactor leak detected, immediate evacuation advised.", location: "San Francisco", state: "CA" },
-    ], []);
+    const fetchDisasters = useCallback(async () => {
+        try {
+            setError(null); 
+          
+            const disasterResponse = await fetch(DISASTER_API_URL);
+            if (!disasterResponse.ok) {
+                throw new Error("Failed to fetch Disaster Declarations Summaries");
+            }
+            const disasterData = await disasterResponse.json();
+            const disasterSummaries = disasterData.DisasterDeclarationsSummaries;
+     
+            const formattedDisasters = disasterSummaries.map(disaster => {
+                const incidentType = disaster.incidentType || "Unknown";
+                const description = disaster.declarationTitle || "No description available";
+                
+                // Only include severity if it's one of EM, DR, or SU
+                const severity = declarationTypeMap[disaster.declarationType] || null;
+                
+                const beginDate = new Date(disaster.incidentBeginDate).toLocaleDateString("en-US") || "Unknown date";
+                const location = `${disaster.designatedArea || "Unknown city"}, ${disaster.state || "Unknown state"}`;
 
-    const filterDisasters = useCallback((location, types) => {
-        let filteredDisasters = mockDisasterData;
+                // Format sentence, only adding severity if it exists
+                return severity 
+                    ? `${incidentType}: ${description} - ${severity} - ${beginDate} - ${location}`
+                    : `${incidentType}: ${description} - ${beginDate} - ${location}`;
+            });
 
-        if (location !== "all") {
-            filteredDisasters = filteredDisasters.filter(disaster => disaster.location === location);
+            setDisasters(formattedDisasters);
+        } catch (error) {
+            setError(error.message); 
+            console.error("Error fetching disaster data:", error);
         }
-
-        if (!types.includes("all")) {
-            filteredDisasters = filteredDisasters.filter(disaster => types.includes(disaster.type));
-        }
-
-        setDisasters(filteredDisasters);
-    }, [mockDisasterData]);
+    }, []);
 
     useEffect(() => {
-        filterDisasters(selectedLocation, selectedDisasterTypes);
-    }, [selectedLocation, selectedDisasterTypes, filterDisasters]);
+        fetchDisasters();
+    }, [selectedLocation, selectedDisasterTypes, fetchDisasters]);
 
     return {
         selectedLocation,
@@ -47,7 +64,7 @@ const useDisasterData = () => {
         setSelectedDisasterTypes,
         disasters,
         allDisasterTypes,
-        filterDisasters,
+        error, 
     };
 };
 

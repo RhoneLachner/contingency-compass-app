@@ -9,7 +9,7 @@ const SafetyTipsPage = () => {
     return (
         <>
             <Header/>
-             <div className="safety-tips-page">
+             <div className="safetyTipsPageContainer">
                 <h1>Safety Tips</h1>
                  <p>Here are some safety tips to help you stay safe during different types of disasters:</p>
                 <SafetyTipsComponent/>

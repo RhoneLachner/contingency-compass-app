@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-    padding-top: 0;
-    height: 100vh;
+    padding-top: 3.5rem;
+    height: calc(100vh - 3rem); 
     position: relative; 
     overflow: hidden; 
 }
@@ -19,7 +19,7 @@
 .splashTitle {
     font-family: "Orbitron", system-ui;
     margin-top: 25vh;
-    font-size:3.5rem;
+    font-size:3rem;
     font-weight: 500;
     color: white;
     opacity: 1; 
@@ -30,7 +30,7 @@
     color: white;
     margin-top: 6vh;
     font-family: "Exo 2", sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 2;
     letter-spacing: 1.1px;
     z-index: 2; 
@@ -62,5 +62,6 @@
     background-color: orange;
     color: #000000;
     font-weight: 500;
+    border-radius: 3px;
   }
   

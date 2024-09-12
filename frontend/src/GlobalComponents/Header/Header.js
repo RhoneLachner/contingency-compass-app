@@ -46,7 +46,7 @@ const Header = () => {
                 <div className="dropdownMenu" ref={menuRef}>
                     <Link to="/ResourcesPage" className="dropdownItem" onClick={toggleMenu}>Nearby Resources</Link>
                     <Link to="/SafetyTipsPage" className="dropdownItem" onClick={toggleMenu}>Safety Tips</Link>
-                    <Link to="/NotificationSettingsPage" className="dropdownItem" onClick={toggleMenu}>Notification Settings</Link>
+                    <Link to="/NotificationSettingsPage" className="dropdownItem" onClick={toggleMenu}>Phone Notifications</Link>
                 </div>
             )}
         </header>

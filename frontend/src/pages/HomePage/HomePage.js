@@ -59,7 +59,7 @@ const HomePage = () => {
         <div className="homePage">
             <Header />
             <WelcomeSplash />
-            <div id="locationSearchID"/>  
+            <div className="locationSearchSection" id="locationSearchID"/>  
                 <LocationSearch 
                     onLocationChange={handleLocationChange}
                     showAllButton={selectedLocation !== "all"}

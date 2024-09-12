@@ -1,11 +1,17 @@
 /* src/GlobalComponents/Header/header.css */
 .appHeader {
     background-color: rgb(8, 8, 8);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between; /* Distributes space between items */
     position: relative; /* Positioning context for absolute elements */
+    position: fixed; /* Keeps the header fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 2.7rem; /* Adjust to the actual height of your header */
+    z-index: 1000; /* Ensure it stays above other content */
 }
 
 .headerIconContainer {
@@ -14,7 +20,8 @@
 }
 
 .appLogo {
-    width:5rem;
+    width: 5rem;
+    height: auto; /* Maintain the aspect ratio */
 }
 
 .hamburgerMenu {
@@ -34,20 +41,20 @@
     right: 1rem;
     top: 3rem;
     background-color: rgb(36, 36, 36);
-    border: .75px solid #939393;
-    border-radius: 0px;
+    border-radius: 3px;
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: .5rem 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     text-align: right;
+    font-family: "Exo 2", sans-serif;
 }
 
 .dropdownItem {
     color: white;
     text-decoration: none;
     display: block;
-    padding: 0.5rem 1rem;
+    padding: .8rem 1rem;
     transition: background-color 0.3s;
 }
 

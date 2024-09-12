@@ -1,9 +1,13 @@
 /* src/pages/HomePage/homePage.css */
 .homePage {
     text-align: center;
-    width: 100%;
+    width: 100vw;
     background-image: url('../../../public/images/HomeBackgroundImage.webp'); 
     background-position: top; 
     background-attachment: fixed; 
+}
+
+.locationSearchSection {
+padding-top: 3rem;
 }
 

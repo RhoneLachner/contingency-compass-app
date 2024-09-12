@@ -1,9 +1,11 @@
 /* src/pages/HomePage/Components/DisasterTypeButtons/DisasterTypeButtons.css */
+
+
 .disasterTypeButtons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 1rem 10rem 0.5rem 10rem;
+    padding: .5rem 10rem 1rem 10rem;
 }
 
 .disasterTypeButtons button {
@@ -15,6 +17,7 @@
     cursor: pointer;
     font-family: "Exo 2", sans-serif;
     font-size: 1rem;
+    border-radius: 3px;
 }
 
 .disasterTypeButtons button.active {

@@ -3,20 +3,22 @@
     justify-content: center;      
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
-    width: 100%;                 
+    width: 100%;             
 }
 
 .navButton {
-    margin: 0px 4rem;         
+    margin: 0px 4rem;    
+    margin-top: .5vh;     
     padding: 8px 12px;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     font-family: "Exo 2", sans-serif;
-    width: 10rem;               
+    width: 11rem;               
     text-align: center;         
     display: inline-block;        
+    border-radius: 3px;
 }
 
 .navButton:hover {

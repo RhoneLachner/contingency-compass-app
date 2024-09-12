@@ -6,11 +6,11 @@
     max-height: 35rem;
     max-width: 50rem;
     background-color: #e0e0e0;
-    margin: 2.5vh auto 1vh auto; /* Center the map container horizontally */
+    margin: 4vh auto; 
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #adadad; /* Optional: adds a border for better visibility */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+    border: 1px solid #adadad; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     font-family: "Exo 2", sans-serif;
 }
