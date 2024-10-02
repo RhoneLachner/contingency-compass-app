@@ -1,5 +1,3 @@
-// src/GlobalComponents/AlertMap/AlertMap.js
-
 import React from "react";
 import "./alertMap.css";
 
@@ -9,10 +7,9 @@ const AlertMap = ({ selectedLocation, proximity, showAll }) => {
             {showAll ? (
                 <p>Map will display all locations.</p>
             ) : (
-                <p>Map will display locations within {proximity} miles of {selectedLocation}.</p>
+                <p>Map will display locations within {proximity} miles of {selectedLocation.lat}, {selectedLocation.lon}.</p>
             )}
             {/* Future plan to map with disaster markers here based on showAll and proximity */}
-            {/* Example: Use disaster data to place markers */}
         </div>
     );
 };

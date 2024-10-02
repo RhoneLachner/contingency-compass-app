@@ -1,10 +1,7 @@
-// src/pages/HomePage/HomePage.js
-
 import React from "react";
 import Header from "../../globalComponents/Header/Header";
 import Footer from "../../globalComponents/Footer/Footer";
 import AlertMap from "./Components/AlertMap/AlertMap";
-import LocationSearch from "../../globalComponents/LocationSearch/LocationSearch";
 import AlertDashboard from "./Components/AlertDashboard/AlertDashboard";
 import DisasterTypeButtons from "./Components/DisasterTypeButtons/DisasterTypeButtons";
 import WelcomeSplash from "./Components/WelcomeSplash/WelcomeSplash";
@@ -20,6 +17,7 @@ const HomePage = () => {
         selectedDisasterTypes,
         setSelectedDisasterTypes,
         disasters,
+        matchingDisasters,  
         allDisasterTypes,
     } = useDisasterData();
 
@@ -76,7 +74,7 @@ const HomePage = () => {
                 handleDisasterTypeChange={handleDisasterTypeChange}
             />
             <AlertDashboard
-                disasters={disasters}
+                matchingDisasters={matchingDisasters}  
                 selectedLocation={selectedLocation}
                 proximity={proximity}
             />

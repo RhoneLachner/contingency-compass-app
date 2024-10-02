@@ -1,44 +1,60 @@
-// src/GlobalComponents/LocationSearch/LocationSearch.js
-
 import React, { useState } from "react";
+import axios from "axios";
 import "./locationSearch.css";
+
+const fetchCoordinatesAndCounty = async (city, state) => {
+    const apiKey = 'AIzaSyDSCnRRvWaijhprauL3fQE9rgX8fi_BeZg'; // Ensure this is correct
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${city},${state}&key=${apiKey}`;
+
+    try {
+        const response = await axios.get(url);
+        console.log(response.data); 
+        if (response.data.status === "OK") {
+            const { lat, lng } = response.data.results[0].geometry.location;
+            let county = null;
+            const addressComponents = response.data.results[0].address_components;
+
+            // Find county in the address components
+            addressComponents.forEach(component => {
+                if (component.types.includes("administrative_area_level_2")) {
+                    county = component.long_name;
+                }
+            });
+
+            return { lat, lon: lng, county };
+        } else {
+            console.error("Error from Geocoding API:", response.data.status);
+            return null;
+        }
+    } catch (error) {
+        console.error("Error fetching coordinates and county:", error);
+        return null;
+    }
+};
 
 const LocationSearch = ({ onLocationChange, showAllButton }) => {
     const [inputValue, setInputValue] = useState("");
-    const [proximity, setProximity] = useState(10); // Default proximity
+    const [proximity, setProximity] = useState(10);
     const [error, setError] = useState("");
 
-    const handleInputChange = (e) => {
-        setInputValue(e.target.value);
-        setError(""); // Clear error when user starts typing
-    };
-
-    const handleProximityChange = (e) => {
-        setProximity(e.target.value);
-    };
-
-    const handleSearch = () => {
-        // Simple regex patterns for city, state, or zip code
-        const cityStatePattern = /^[a-zA-Z\s]+,\s*[a-zA-Z\s]+$/;
-        const zipCodePattern = /^\d{5}$/;
-
-        if (cityStatePattern.test(inputValue) || zipCodePattern.test(inputValue)) {
-            setError(""); // Clear error
-            onLocationChange(inputValue, proximity);
+    // Updated handleSearch function
+    const handleSearch = async () => {
+        if (inputValue) {
+            const inputParts = inputValue.split(", ");
+            if (inputParts.length !== 2) {
+                setError("Please enter city and state separated by a comma.");
+                return;
+            }
+            const [city, state] = inputParts;
+            const locationData = await fetchCoordinatesAndCounty(city, state);
+            if (locationData) {
+                onLocationChange(locationData, proximity);
+            } else {
+                setError("Failed to get location data.");
+            }
         } else {
-            setError("Please enter a valid city and state or zip code.");
-            setInputValue(""); // Clear input value to show placeholder error
+            setError("Please enter a valid city and state.");
         }
-    };
-
-    const handleSeeAllLocations = () => {
-        setError(""); 
-        onLocationChange("all", proximity);
-    };
-
-    const handleCancel = () => {
-        setError(""); 
-        setInputValue(""); 
     };
 
     return (
@@ -46,11 +62,10 @@ const LocationSearch = ({ onLocationChange, showAllButton }) => {
             <input
                 type="text"
                 value={inputValue}
-                onChange={handleInputChange}
-                className={error ? "input-error" : ""}
-                placeholder={error || "Enter city, state or zip code"} 
+                onChange={(e) => setInputValue(e.target.value)}
+                placeholder={error || "Enter city, state"}
             />
-            <select value={proximity} onChange={handleProximityChange}>
+            <select value={proximity} onChange={(e) => setProximity(e.target.value)}>
                 <option value={1}>1 mile</option>
                 <option value={10}>10 miles</option>
                 <option value={20}>20 miles</option>
@@ -58,12 +73,7 @@ const LocationSearch = ({ onLocationChange, showAllButton }) => {
                 <option value={100}>100 miles</option>
             </select>
             <button onClick={handleSearch}>Search</button>
-            {showAllButton && (
-                <button onClick={handleSeeAllLocations}>See All Locations</button>
-            )}
-            {error && (
-                <button onClick={handleCancel} className="cancel-button">Cancel</button>
-            )}
+            {error && <p className="error-message">{error}</p>}
         </div>
     );
 };
