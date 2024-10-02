@@ -1,7 +1,8 @@
 import React from "react";
 import "./alertDashboard.css";
 
-const AlertDashboard = ({ matchingDisasters = [], selectedLocation, proximity }) => {  
+const AlertDashboard = ({ matchingDisasters = [], selectedLocation, proximity }) => {  // Ensure default array
+    const formatLocation = () => {
         if (selectedLocation === "all") {
             return "All Locations";
         } else if (typeof selectedLocation === "object" && selectedLocation.lat && selectedLocation.lon) {
