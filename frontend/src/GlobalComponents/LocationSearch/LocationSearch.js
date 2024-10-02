@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { googKey } from "./googKey";
 import axios from "axios";
 import "./locationSearch.css";
 
 const fetchCoordinatesAndCounty = async (city, state) => {
-    const apiKey = 'AIzaSyDSCnRRvWaijhprauL3fQE9rgX8fi_BeZg'; // Ensure this is correct
+    const apiKey = {googKey}; 
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${city},${state}&key=${apiKey}`;
 
     try {

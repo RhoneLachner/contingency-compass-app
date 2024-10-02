@@ -1,0 +1,1 @@
+export const googKey = "AIzaSyDSCnRRvWaijhprauL3fQE9rgX8fi_BeZg"; 
